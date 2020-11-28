@@ -10,6 +10,11 @@
   <script src="https://kit.fontawesome.com/97604f290f.js" crossorigin="anonymous"></script>
 </head>
 <style>
+  .number{
+        font-size:1.2rem;
+        color:red;
+        font-weight:bolder;
+    }
 
 </style>
 <body>
