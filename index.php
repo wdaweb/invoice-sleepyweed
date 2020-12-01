@@ -19,12 +19,12 @@
 </style>
 <body>
   <div class="container mt-5">
-    <div class="col-md-5 col-lg-6 p-3 d-flex justify-content-around mx-auto border">
+    <div class="col-md-5 col-lg-7 p-3 d-flex justify-content-around mx-auto border">
       <div class="text-center"><a href="index.php">統一發票當期對獎號碼</a></div>
       <div class="text-center"><a href="?do=login">登入看更多！</a></div>
     </div>
 
-    <div class="col-md-5 col-lg-6 p-3 d-flex justify-content-around mx-auto border">
+    <div class="col-md-5 col-lg-7 p-3 mx-auto border">
       <?php
         if(isset($_GET['do'])){
           $file=$_GET['do'].".php";

@@ -4,6 +4,7 @@ include_once "../base.php";
 
 $sql="INSERT INTO `invoice`(`".implode("`,`",array_keys($_POST))."`) 
 VALUES ('".implode("','",$_POST)."')";
+echo $sql;
 $pdo->exec($sql);
 
 echo"新增完成";
