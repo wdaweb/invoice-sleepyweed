@@ -4,6 +4,7 @@ $sql="SELECT * FROM `invoice` ORDER BY DATE";
 $rows=$pdo->query($sql)->fetchALL();
 ?>
 <button><a href="./index.php?do=mem">繼續輸入發票</a></button>
+<button><a href="">幫我對獎</a></button>
 <div class="table-responsive">
 <table class="table">
   <thead>

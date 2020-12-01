@@ -2,8 +2,8 @@
 <table class="table table-bordered table-sm" summary="統一發票中獎號碼單">
   <tbody>
     <tr> 
-    <th id="months">年月份</th> 
-    <td headers="months" class="title">
+    <th id="month">年月份</th> 
+    <td headers="month" class="title">
     <input type="number" name="year" min="<?=date("Y")-1;?>" max="<?=date("Y")+1;?>" step="1" value="<?=date("Y");?>">年
       <select name="period">
         <option value="1">01~02</option>

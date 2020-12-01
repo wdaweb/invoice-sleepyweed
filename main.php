@@ -39,13 +39,6 @@ foreach($award as $aw){
 
 
 ?>
-<a href=""><i class="fas fa-caret-left"></i></a>
-
-<table class="table table-bordered table-sm" summary="統一發票中獎號碼單">
-  <tbody>
-    <tr> 
-      <th id="months">年月份</th> 
-      <td headers="months" class="title">
       <?=$year;?>年
       <?php
       $month=[
@@ -58,6 +51,31 @@ foreach($award as $aw){
       ];
       echo $month[$period];
       ?>月
+<!-- <a href=""><i class="fas fa-caret-left"></i></a> -->
+    <form action="?" method="post">
+      <select name="year">
+        <option value="2019"><?=$year-1;?></option>
+        <option value="2020"><?=$year;?></option>
+        <option value="2021"><?=$year+1;?></option>
+      </select>
+      <select name="period">
+        <option value="01~02"><?=$month[1];?></option>
+        <option value="03~04"><?=$month[2];?></option>
+        <option value="05~06"><?=$month[3];?></option>
+        <option value="07~08"><?=$month[4];?></option>
+        <option value="09~10"><?=$month[5];?></option>
+        <option value="11~12"><?=$month[6];?></option>
+      </select>
+      <input type="submit" value="提交">
+    </form>
+
+<table class="table table-bordered table-sm" summary="統一發票中獎號碼單">
+  <tbody>
+    <tr> 
+      <th id="month">年月份</th> 
+      <td headers="month" class="title">
+      <?=$_POST['year'];?>年
+      <?=$_POST['period'];?>月
       </td>
     </tr>
 
@@ -129,4 +147,6 @@ foreach($award as $aw){
   </tbody>
 </table>
 
-<a href=""><i class="fas fa-caret-right"></i></a>
+<!-- <a href=""><i class="fas fa-caret-right"></i></a> -->
+
+
