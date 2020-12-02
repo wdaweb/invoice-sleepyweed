@@ -1,14 +1,36 @@
+<form action="" method="post">
+      <select name="year">
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+      </select>
+      <select name="period">
+        <option value="1">01~02</option>
+        <option value="2">03~04</option>
+        <option value="3">05~06</option>
+        <option value="4">07~08</option>
+        <option value="5">09~10</option>
+        <option value="6">11~12</option>
+      </select>
+      <input type="submit" value="提交"> 
+</form>
 <?php
 include_once "./base.php";
 
-if(isset($_GET['pd'])){
+if(isset($_POST['year']) && isset($_POST['period'])){
+  $year=$_POST['year'];
+  $period=$_POST['period'];
+  $get_post=$pdo->query("SELECT * FROM `award_number` WHERE `year`='$year' && `period`='$period'")->fetch();
+  
+  }else if(isset($_GET['pd'])){
   $year=explode('-',$_GET['pd'])[0];
   $period=explode('-',$_GET['pd'])[1];
-}else{
-  $get_new=$pdo->query("SELECT * FROM `award_number` WHERE `year` && `period`")->fetch();
-  $year=$get_new['year'];
-  $period=$get_new['period'];
-}
+
+  }else{
+    $year=date("Y");
+    $period=ceil(date("n")/2);
+    $get_new=$pdo->query("SELECT * FROM `award_number` WHERE `year`='$year' && `period`='$period'")->fetch();
+  }
 
 
 $award=$pdo->query("SELECT * FROM `award_number` WHERE `year`='$year' && `period`='$period'")->fetchALL();
@@ -36,48 +58,27 @@ foreach($award as $aw){
     break;
   }
 }
-
-
 ?>
-      <?=$year;?>年
-      <?php
-      $month=[
-              1=>"01~02",
-              2=>"03~04",
-              3=>"05~06",
-              4=>"07~08",
-              5=>"09~10",
-              6=>"11~12"
-      ];
-      echo $month[$period];
-      ?>月
-<!-- <a href=""><i class="fas fa-caret-left"></i></a> -->
-    <form action="?" method="post">
-      <select name="year">
-        <option value="2019"><?=$year-1;?></option>
-        <option value="2020"><?=$year;?></option>
-        <option value="2021"><?=$year+1;?></option>
-      </select>
-      <select name="period">
-        <option value="01~02"><?=$month[1];?></option>
-        <option value="03~04"><?=$month[2];?></option>
-        <option value="05~06"><?=$month[3];?></option>
-        <option value="07~08"><?=$month[4];?></option>
-        <option value="09~10"><?=$month[5];?></option>
-        <option value="11~12"><?=$month[6];?></option>
-      </select>
-      <input type="submit" value="提交">
-    </form>
-
 <table class="table table-bordered table-sm" summary="統一發票中獎號碼單">
   <tbody>
     <tr> 
       <th id="month">年月份</th> 
       <td headers="month" class="title">
-      <?=$_POST['year'];?>年
-      <?=$_POST['period'];?>月
+      <?=$year;?>年
+      <?php
+      $month=[
+        1=>"01~02",
+        2=>"03~04",
+        3=>"05~06",
+        4=>"07~08",
+        5=>"09~10",
+        6=>"11~12"];
+      echo $month[$period];
+      ?>月
       </td>
     </tr>
+
+
 
     <tr> 
       <th id="specialPrize" rowspan="2">特別獎</th> 
@@ -146,7 +147,3 @@ foreach($award as $aw){
     </tr> 
   </tbody>
 </table>
-
-<!-- <a href=""><i class="fas fa-caret-right"></i></a> -->
-
-
