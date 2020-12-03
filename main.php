@@ -28,7 +28,7 @@ if(isset($_POST['year']) && isset($_POST['period'])){
 
   }else{
     $year=date("Y");
-    $period=ceil(date("n")/2);
+    $period=(ceil(date("n")/2))-1;
     $get_new=$pdo->query("SELECT * FROM `award_number` WHERE `year`='$year' && `period`='$period'")->fetch();
   }
 

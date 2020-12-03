@@ -7,6 +7,10 @@
     <input type="number" name="payment">
     </div>
   <div>消費日期:<input type="date" name="date"></div>
+  <!-- <input type="hidden" name="year">
+  因為直到使用者按下送出後才會得到year的值
+  ，所以在invoice_list.php的「這裡！！！」處
+  設置一行程式--> 
     消費期別:<select name="period" id="">
     <option value="1">1,2月</option>
     <option value="2">3,4月</option>
