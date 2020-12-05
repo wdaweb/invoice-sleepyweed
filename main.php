@@ -1,7 +1,7 @@
 <form action="" method="post">
       <select name="year">
         <option value="2019">2019</option>
-        <option value="2020">2020</option>
+        <option value="2020"selected>2020</option>
         <option value="2021">2021</option>
       </select>
       <select name="period">
@@ -105,7 +105,7 @@ foreach($award as $aw){
       <td headers="firstPrize" class="number">
         <?php
           foreach($first as $f){
-            echo $f;
+            echo $f."<br>";
           }
         ?>
       </td> 
@@ -140,7 +140,7 @@ foreach($award as $aw){
       <td headers="addSixPrize" class="number">
         <?php
           foreach($six as $s){
-            echo $s;
+            echo $s."<br>";
           }
         ?>
       </td> 

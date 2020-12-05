@@ -35,7 +35,7 @@ $rows=$pdo->query($sql)->fetchALL();
 
 ?>
 <button><a href="./index.php?do=mem">繼續輸入發票</a></button>
-<button><a href="">幫我對獎</a></button>
+<button><a href="index.php?do=all_award&year=<?=$year;?>&period=<?=$period;?>">幫我對獎</a></button>
 
 <div class="table-responsive">
 <table class="table">
@@ -47,6 +47,7 @@ $rows=$pdo->query($sql)->fetchALL();
   <th scope="col" class="text-center">消費日期</th>
   <th scope="col" class="text-center">消費明細</th>
   <th scope="col" class="text-center">操作</th>
+  <th scope="col" class="text-center"></th>
 </tr>
 </thead>
 <?php
@@ -65,6 +66,7 @@ foreach($rows as $row){
       <button class="btn btn-sm btn-info">
         <a class="text-light" href="index.php?do=del_invoice&id=<?=$row['id'];?>">刪除</button></a>
     </td>
+    <td class="text-center"></td>
 </tr>
 </tbody>
 <?php
