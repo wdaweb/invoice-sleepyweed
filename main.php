@@ -1,10 +1,13 @@
-<form action="" method="post">
-      <select name="year">
+<form action="" method="post" class="row flex-nowrap">
+    <div class="form-group col-3">
+      <select name="year" class="custom-select">
         <option value="2019">2019</option>
         <option value="2020"selected>2020</option>
         <option value="2021">2021</option>
       </select>
-      <select name="period">
+    </div>
+    <div class="form-group col-3">
+      <select name="period" class="custom-select">
         <option value="1">01~02</option>
         <option value="2">03~04</option>
         <option value="3">05~06</option>
@@ -12,8 +15,10 @@
         <option value="5">09~10</option>
         <option value="6">11~12</option>
       </select>
-      <input type="submit" value="提交"> 
+    </div>
+    <p class="text-center"><input type="submit" value="提交" class="py-1"></p>
 </form>
+
 <?php
 include_once "./base.php";
 
@@ -59,12 +64,12 @@ foreach($award as $aw){
   }
 }
 ?>
-<table class="table table-bordered table-sm" summary="統一發票中獎號碼單">
+<table class="table table-sm " summary="統一發票中獎號碼單">
   <tbody>
     <tr> 
       <th id="month">年月份</th> 
       <td headers="month" class="title">
-      <?=$year;?>年
+      <div class="ym"><?=$year;?>年
       <?php
       $month=[
         1=>"01~02",
@@ -75,6 +80,7 @@ foreach($award as $aw){
         6=>"11~12"];
       echo $month[$period];
       ?>月
+      </div>
       </td>
     </tr>
 

@@ -8,9 +8,9 @@ $inv=$pdo->query($sql)->fetch();
 <div class="col-md-6 text-center border p-4 mx-auto">
   <div class="text-center">你確定要刪除以下發票嗎?</div>
     <ul>
-      發票號碼：<li><?=$inv['code'].$inv['number'];?></li>
-      發票金額：<li><?=$inv['payment'];?></li>
-      消費日期：<li><?=$inv['date'];?></li>
+      <li>發票號碼：<?=$inv['code'].$inv['number'];?></li>
+      <li>發票金額：<?=$inv['payment'];?></li>
+      <li>消費日期：<?=$inv['date'];?></li>
     </ul>
     <div class="text-center mt-4">
       <button class="btn btn-info">

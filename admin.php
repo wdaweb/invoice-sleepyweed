@@ -4,15 +4,25 @@
     <tr> 
     <th id="month">年月份</th> 
     <td headers="month" class="title">
-    <input type="number" name="year" min="<?=date("Y")-1;?>" max="<?=date("Y")+1;?>" step="1" value="<?=date("Y");?>">年
-      <select name="period">
+    <div class="row flex-nowrap">
+    <div class="form-group col-3">
+    <select type="number" name="year" class="custom-select">
+      <option value="2019">2019</option>
+      <option value="2020" selected>2020</option>
+      <option value="2021">2021</option>
+    </select>
+    </div>
+    <div class="form-group col-3">
+      <select name="period" class="custom-select">
         <option value="1">01~02</option>
         <option value="2">03~04</option>
         <option value="3">05~06</option>
         <option value="4">07~08</option>
         <option value="5">09~10</option>
         <option value="6">11~12</option>
-      </select>月
+      </select>
+    </div>
+    </div>
     </td>
     </tr> 
     <tr> 
@@ -75,8 +85,8 @@
     
   </tbody>
 </table>
-  <div class="text-center">
-    <input type="submit" value="儲存" class="mx-2 btn btn-primary">
-    <input type="reset" value="清空" class="mx-2 btn btn-warning">
+  <div class="row justify-content-center flex-nowrap">
+    <p class="mx-2"><input type="submit" value="儲存"></p>
+    <p class="mx-2"><input type="reset" value="重置"></p>
   </div>
   </form> 

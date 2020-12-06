@@ -9,8 +9,9 @@ $period_month=[
     5=>'09~10',
     6=>'11~12'
 ];
-echo "西元".$_GET['year']."年".$period_month[$_GET['period']]."月份發票中獎清單<br>";
-
+?>
+<div class="title3">西元<?=$_GET['year'];?>年<?=$period_month[$_GET['period']];?>月份發票中獎清單<br></div>
+<?php
 //1.撈出該期發票
 $year=$_GET['year'];
 $period=$_GET['period'];
@@ -23,11 +24,11 @@ $sql="SELECT * FROM `award_number` WHERE`year`=$year && `period`=$period";
 $award=$pdo->query($sql)->fetchALL(PDO::FETCH_ASSOC);
 // print_r($award);
 ?>
-<button><a href="./index.php?do=invoice_list">我的發票列表</a></button>
+<p class="text-right"><a href="./index.php?do=invoice_list">我的發票列表</a></p>
 <div class="table-responsive">
-<table class="table">
+<table class="table table-hover">
   <thead>
-    <tr>
+    <tr class="table-info">
     <th scope="col" class="text-center"></th>
       <th scope="col" class="text-center">消費日期</th>
       <th scope="col" class="text-center">發票號碼</th>

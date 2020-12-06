@@ -1,5 +1,5 @@
 <?php
-include_once "base.php";
+include_once "../base.php";
 
 $acc=$_POST['acc'];
 $pw=$_POST['pw'];
@@ -27,9 +27,9 @@ echo $insert_into_member;
 
 //4.判斷是否註冊成功並跳轉頁面。不同頁面？前要加index.php
 if($result){
-  header("location:index.php?do=login&meg=新增成功");
+  header("location:../index.php?do=login&meg=新增成功");
 }else{
-  header("location:index.php?do=login&meg=新增失敗");
+  header("location:../index.php?do=login&meg=新增失敗");
 }
 
 

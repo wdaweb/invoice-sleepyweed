@@ -27,8 +27,8 @@ if(isset($_session['login'])){
 ?>
 
 <div class="container">
-  <div class="col">
-    <form action="check.php" method="post">
+  <div class="row">
+    <form action="check.php" method="post" class="col">
     <p class="text-center">帳號:<input type="text" name="acc"></p>
     <p class="text-center">密碼:<input type="password" name="pw"></p>
     <p class="text-center"><a href="?do=register">註冊新帳號</a></p>

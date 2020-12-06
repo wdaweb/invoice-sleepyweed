@@ -6,7 +6,7 @@ $inv=$pdo->query($sql)->fetch();
 // print_r($inv);
 ?>
 
-
+<button><a href="./index.php?do=invoice_list">我的發票列表</a></button>
 
 <div class="form-group">
 <form action="api/edit_inv.php" method="post">
